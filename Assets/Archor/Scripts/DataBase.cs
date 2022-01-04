@@ -21,8 +21,6 @@ public static class Database
     public static bool getCardCalander = false;
     public static bool getCardDeath = false;
 
-    public static bool isOldManColored = false;
-
 
     //顺便研究一下数据库怎么写
     //用静态的公开变量记录卡牌的选择状态，在其他的脚本内调用。真是学到了

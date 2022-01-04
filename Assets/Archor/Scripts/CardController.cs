@@ -74,7 +74,7 @@ public class CardController : MonoBehaviour
 
         GameObject PrefabInstance = Instantiate(prefabName);
 
-        PrefabInstance.transform.parent = GameObject.Find("UI/CardPanel").gameObject.transform;
+        PrefabInstance.transform.parent = GameObject.Find("Canvas/CardPanel").gameObject.transform;
 
         PrefabInstance.gameObject.GetComponent<RectTransform>().localScale = new Vector3(2, 2, 2);//设定卡牌大小
 
@@ -82,13 +82,6 @@ public class CardController : MonoBehaviour
 
         SortCards(NumCards);
     }
-
-    //卡牌消失后重新排序
-    public void ReSortCards()
-    {
-
-    }
-    
 
 
     //以下为使DialogueSystem调用方便而设置的函数
@@ -134,7 +127,7 @@ public class CardController : MonoBehaviour
 
     public void GetXuMei()
     {
-        StartCoroutine(GetCard(0.1f, prefabXuMei));
+        StartCoroutine(GetCard(0.1f, prefabElectricity));
     }
 
     public void GetPills()
