@@ -6,7 +6,7 @@ using DG.Tweening;
 public class CardController : MonoBehaviour
 {
     //解决卡牌实例化问题和基础的排列问题
-    public GameObject CardPanel;
+    public GameObject cardPanel;
     public GameObject prefabRadiation;
     public GameObject prefabBrown;
     public GameObject prefabFlag;
@@ -22,132 +22,97 @@ public class CardController : MonoBehaviour
     public GameObject prefabCalander;
     public GameObject prefabDeath;
 
-    private GameObject Card;
-    private GameObject[] CardList;
+    //private GameObject Card;
+    private GameObject[] _cardList;
 
     private RectTransform rect;
 
-    private float NumCards;
-    private float width;
+    private float _numCards;
+    private float _width;
 
 
     void Start()
     {
-        RectTransform rect = CardPanel.gameObject.GetComponent<RectTransform>();
-
-        width = rect.rect.width;
-
-        NumCards = 0f;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        RectTransform rect = cardPanel.gameObject.GetComponent<RectTransform>();
+        _width = rect.rect.width;
+        _numCards = 0f;
     }
 
     public void SortCards(float NumCards)
     {
-        CardList = GameObject.FindGameObjectsWithTag("Card");
-
-        for (int i = 0; i < CardList.Length; i++)
+        _cardList = GameObject.FindGameObjectsWithTag("Card");
+        for (int i = 0; i < _cardList.Length; i++)
         {
-
-            CardList[i].gameObject.GetComponent<RectTransform>().localPosition = new Vector3(((i+1)/ (NumCards+1)) * width - 60, 0);//设定位置
-
+            _cardList[i].gameObject.GetComponent<RectTransform>().localPosition = new Vector3(((i+1)/ (NumCards+1)) * _width - 60, 0);//设定位置
             //Debug.Log(i+1 + " 号牌的位置是 " + CardList[i].gameObject.GetComponent<RectTransform>().localPosition.x);
+            //严格来讲，这个地方可以用DOTween来解决，但先做完再加。
         }
     }
 
-    IEnumerator GetCard(float DelayTime, GameObject prefabName)
+    void GetCard(GameObject prefabName)
     {
-        yield return new WaitForSeconds(DelayTime);
-
         //本来想使用协程制作一个计时器，延时DelayTime以后执行下面函数
-
-        //Debug.Log("见鬼了");
-
         //但为什么是在剧情过完以后才开始计时的啊
         //0f表示不启用，0.1f表示剧情过完以后开始计时0.1s
-
-        NumCards = NumCards + 1;
-
-        GameObject PrefabInstance = Instantiate(prefabName);
-
-        PrefabInstance.transform.parent = GameObject.Find("Canvas/CardPanel").gameObject.transform;
-
-        PrefabInstance.gameObject.GetComponent<RectTransform>().localScale = new Vector3(2, 2, 2);//设定卡牌大小
-
-        PrefabInstance.gameObject.GetComponent<RectTransform>().localPosition = new Vector3(0, 0, 0);
-
-        SortCards(NumCards);
+        _numCards++;
+        GameObject prefabInstance = Instantiate(prefabName);
+        prefabInstance.transform.parent = GameObject.Find("UI/CardPanel").gameObject.transform;
+        prefabInstance.gameObject.GetComponent<RectTransform>().localScale = new Vector3(2, 2, 2);//设定卡牌大小
+        prefabInstance.gameObject.GetComponent<RectTransform>().localPosition = new Vector3(0, 0, 0);
+        SortCards(_numCards);
     }
-
-
+    
     //以下为使DialogueSystem调用方便而设置的函数
-    public void GetTears()
-    {
-        StartCoroutine(GetCard(0.1f, prefabTears));
+    public void GetTears() {
+        GetCard(prefabTears);
     }
 
-    public void GetBrown()
-    {
-        StartCoroutine(GetCard(0.1f, prefabBrown));
+    public void GetBrown() {
+        GetCard(prefabBrown);
     }
 
-    public void GetFlag()
-    {
-        StartCoroutine(GetCard(0.1f, prefabFlag));
+    public void GetFlag() {
+        GetCard(prefabFlag);
     }
 
-    public void GetKnowledge()
-    {
-        StartCoroutine(GetCard(0.1f, prefabKnowledge));
+    public void GetKnowledge() {
+        GetCard(prefabKnowledge);
     }
 
-    public void GetWinterSweet()
-    {
-        StartCoroutine(GetCard(0.1f, prefabWinterSweet));
+    public void GetWinterSweet() {
+        GetCard(prefabWinterSweet);
     }
 
-    public void GetElectricity()
-    {
-        StartCoroutine(GetCard(0.1f, prefabElectricity));
+    public void GetElectricity() {
+        GetCard(prefabElectricity);
     }
 
-    public void GetConfidence()
-    {
-        StartCoroutine(GetCard(0.1f, prefabConfidence));
+    public void GetConfidence() {
+        GetCard( prefabConfidence);
     }
 
-    public void GetRadiation()
-    {
-        StartCoroutine(GetCard(0.1f, prefabRadiation));
+    public void GetRadiation() {
+        GetCard( prefabRadiation);
     }
 
-    public void GetXuMei()
-    {
-        StartCoroutine(GetCard(0.1f, prefabElectricity));
+    public void GetXuMei() {
+        GetCard(prefabElectricity);
     }
 
-    public void GetPills()
-    {
-        StartCoroutine(GetCard(0.1f, prefabPills));
+    public void GetPills() {
+        GetCard(prefabPills);
     }
 
-    public void GetLife()
-    {
-        StartCoroutine(GetCard(0.1f, prefabLife));
+    public void GetLife() {
+        GetCard(prefabLife);
     }
 
-    public void GetCalander()
-    {
-        StartCoroutine(GetCard(0.1f, prefabCalander));
+    public void GetCalander() {
+        GetCard(prefabCalander);
     }
 
-    public void GetDeath()
-    {
-        StartCoroutine(GetCard(0.1f, prefabDeath));
+    public void GetDeath() {
+        GetCard(prefabDeath);
     }
 
 }
