@@ -81,6 +81,13 @@ public class CardController : MonoBehaviour
         SortCards(NumCards);
     }
 
+    //卡牌消失后重新排序
+    public void ReSortCards()
+    {
+
+    }
+    
+
 
     //以下为使DialogueSystem调用方便而设置的函数
     public void GetTears()
@@ -125,7 +132,7 @@ public class CardController : MonoBehaviour
 
     public void GetXuMei()
     {
-        StartCoroutine(GetCard(0.1f, prefabElectricity));
+        StartCoroutine(GetCard(0.1f, prefabXuMei));
     }
 
     public void GetPills()

@@ -14,9 +14,21 @@ public class DialogueController : MonoBehaviour
 
     }
 
+    //测试后门
     void Update()
     {
-
+        if (Input.GetKeyDown("k"))
+        {
+            GameObject.Find("StoryToKnowledge").GetComponent<DialogueSystemTrigger>().enabled = true;
+        }
+        if (Input.GetKeyDown("c"))
+        {
+            GameObject.Find("StoryToConfidenceAndElectricity").GetComponent<DialogueSystemTrigger>().enabled = true;
+        }
+        if (Input.GetKeyDown("w"))
+        {
+            GameObject.Find("StoryToWinterSweet").GetComponent<DialogueSystemTrigger>().enabled = true;
+        }
     }
 
     //从传入名字和字符串操作角度考虑优化（反正判定条件和对话系统都是字符串
@@ -211,7 +223,7 @@ public class DialogueController : MonoBehaviour
     {
         if (Database.getCardBrown && Database.getCardFlag)
         {
-            Invoke("GetCardStoryToWinterSweet",2f);
+            Invoke("GetCardStoryToWinterSweet",3f);
         }
 
         if (Database.getCardBrown && Database.getCardRadiation)
@@ -220,19 +232,57 @@ public class DialogueController : MonoBehaviour
             //为了防止对话系统通道阻塞，用延时的方式避开卡片自身的描述。
             //什么垃圾插件，回去我必把unity的基础知识和架构以及这两个插件搞明白
         }
+
+        if (Database.getCardFlag && Database.getCardRadiation)
+        {
+            Invoke("GetCardStoryToKnowledge", 3f);
+        }
+
+        if (Database.getCardTears && Database.getCardXuMei)
+        {
+            Invoke("GetCardStoryToPills", 8f);
+        }
+
+        if (Database.getCardKnowledge && Database.getCardRadiation)
+        {
+            Invoke("GetCardStoryToConfidenceAndElectricity", 3f);
+        }
+
+        if (Database.getCardConfidence && Database.getCardWinterSweet)
+        {
+            Invoke("GetCardStoryToXuMei", 3f);
+        }
+
+        if (Database.getCardXuMei && Database.getCardElectricity)
+        {
+            Invoke("GetCardStoryToLife", 3f);
+        }
+
+        if (Database.getCardLife)
+        {
+            Invoke("GetCardStoryToCalander", 3f);
+        }
+
+        if (Database.getCardXuMei && Database.getCardCalander || Database.getCardCalander && Database.getCardPills)
+        {
+            Invoke("GetCardStoryToDeath", 3f);
+            //结局
+        }
     }
+
 
     //to wintersweet
     public void GetCardStoryToWinterSweet()
     {
         DialogueManager.StartConversation("StoryToWinterSweet", actor.transform, conversant.transform);
         Invoke("GetCardWinterSweet", 12f);
+
+        //Invoke("ReGetCardWinterSweet", 12f);
     }
     public void GetCardWinterSweet()
     {
         GameObject.Find("StoryToWinterSweet").GetComponent<DialogueSystemTrigger>().enabled = true;
     }
-
 
     //to tears
     public void GetCardStoryToTears()
@@ -245,6 +295,81 @@ public class DialogueController : MonoBehaviour
         GameObject.Find("StoryToTears").GetComponent<DialogueSystemTrigger>().enabled = true;
     }
 
+    //to Knowledge
+    public void GetCardStoryToKnowledge()
+    {
+        DialogueManager.StartConversation("StoryToKnowledge", actor.transform, conversant.transform);
+        Invoke("GetCardKnowledge", 6f);
+    }
+    public void GetCardKnowledge()
+    {
+        GameObject.Find("StoryToKnowledge").GetComponent<DialogueSystemTrigger>().enabled = true;
+    }
 
+    //to Pills
+    public void GetCardStoryToPills()
+    {
+        DialogueManager.StartConversation("StoryToPills", actor.transform, conversant.transform);
+        Invoke("GetCardPills", 6f);
+    }
+    public void GetCardPills()
+    {
+        GameObject.Find("StoryToPills").GetComponent<DialogueSystemTrigger>().enabled = true;
+    }
+
+    //to Confidence / Electricity
+    public void GetCardStoryToConfidenceAndElectricity()
+    {
+        DialogueManager.StartConversation("StoryToConfidenceAndElectricity", actor.transform, conversant.transform);
+        Invoke("GetCardToConfidenceAndElectricity", 15f);
+    }
+    public void GetCardToConfidenceAndElectricity()
+    {
+        GameObject.Find("StoryToConfidenceAndElectricity").GetComponent<DialogueSystemTrigger>().enabled = true;
+    }
+
+    //to XuMei
+    public void GetCardStoryToXuMei()
+    {
+        DialogueManager.StartConversation("StoryToXuMei", actor.transform, conversant.transform);
+        Invoke("GetCardToXuMei", 8f);
+    }
+    public void GetCardToXuMei()
+    {
+        GameObject.Find("StoryToXuMei").GetComponent<DialogueSystemTrigger>().enabled = true;
+    }
+
+    //to Life
+    public void GetCardStoryToLife()
+    {
+        DialogueManager.StartConversation("StoryToLife", actor.transform, conversant.transform);
+        Invoke("GetCardToLife", 8f);
+    }
+    public void GetCardToLife()
+    {
+        GameObject.Find("StoryToLife").GetComponent<DialogueSystemTrigger>().enabled = true;
+    }
+
+    //to Life
+    public void GetCardStoryToCalander()
+    {
+        DialogueManager.StartConversation("StoryToCalander", actor.transform, conversant.transform);
+        Invoke("GetCardToCalander", 3f);
+    }
+    public void GetCardToCalander()
+    {
+        GameObject.Find("StoryToCalander").GetComponent<DialogueSystemTrigger>().enabled = true;
+    }
+
+    //to Death
+    public void GetCardStoryToDeath()
+    {
+        DialogueManager.StartConversation("StoryToDeath", actor.transform, conversant.transform);
+        Invoke("GetCardToDeath", 8f);
+    }
+    public void GetCardToDeath()
+    {
+        GameObject.Find("StoryToDeath").GetComponent<DialogueSystemTrigger>().enabled = true;
+    }
 
 }

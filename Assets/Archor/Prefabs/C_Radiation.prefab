@@ -229,6 +229,6 @@ MonoBehaviour:
   lifeTime: 0
   text: {fileID: 4226234739094724196}
   CanTime: 0
-  UpMove: 10
+  UpMove: 20
   DownMove: 0
   CanDownMove: 1

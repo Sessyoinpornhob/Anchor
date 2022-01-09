@@ -42,6 +42,8 @@ public class CardMove : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
             if (lifeTime <= 0.2f)
             {
+                
+                
                 Destroy(gameObject, 0.2f);//这个时间配置就刚好（0.02f,0.2f,0.2f）
             }
         }
