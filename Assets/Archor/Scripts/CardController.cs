@@ -59,8 +59,10 @@ public class CardController : MonoBehaviour
         }
     }
 
-    void GetCard(float delayTime, GameObject prefabName)
+    IEnumerator GetCard(float DelayTime, GameObject prefabName)
     {
+        yield return new WaitForSeconds(DelayTime);
+
         //本来想使用协程制作一个计时器，延时DelayTime以后执行下面函数
 
         //Debug.Log("见鬼了");
@@ -72,7 +74,7 @@ public class CardController : MonoBehaviour
 
         GameObject PrefabInstance = Instantiate(prefabName);
 
-        PrefabInstance.transform.parent = GameObject.Find("UI/CardPanel").gameObject.transform;
+        PrefabInstance.transform.parent = GameObject.Find("Canvas/CardPanel").gameObject.transform;
 
         PrefabInstance.gameObject.GetComponent<RectTransform>().localScale = new Vector3(2, 2, 2);//设定卡牌大小
 
@@ -81,21 +83,14 @@ public class CardController : MonoBehaviour
         SortCards(NumCards);
     }
 
-    //卡牌消失后重新排序
-    public void ReSortCards()
-    {
-
-    }
-    
-
 
     //以下为使DialogueSystem调用方便而设置的函数
     public void GetTears()
     {
-        GetCard(0.1f, prefabTears);
+        StartCoroutine(GetCard(0.1f, prefabTears));
     }
 
-    /*public void GetBrown()
+    public void GetBrown()
     {
         StartCoroutine(GetCard(0.1f, prefabBrown));
     }
@@ -132,7 +127,7 @@ public class CardController : MonoBehaviour
 
     public void GetXuMei()
     {
-        StartCoroutine(GetCard(0.1f, prefabXuMei));
+        StartCoroutine(GetCard(0.1f, prefabElectricity));
     }
 
     public void GetPills()
@@ -153,6 +148,6 @@ public class CardController : MonoBehaviour
     public void GetDeath()
     {
         StartCoroutine(GetCard(0.1f, prefabDeath));
-    }*/
+    }
 
 }

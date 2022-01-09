@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 98e4925e4e0c75a40a23551d74d3a13a
-=======
-guid: 0fcb9c9ee943d32428732dd2072d2020
->>>>>>> parent of e94456e (回档到鼠标点击卡牌的版本)
+guid: 060eaf49dbd2ce24ebb020278ce68194
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

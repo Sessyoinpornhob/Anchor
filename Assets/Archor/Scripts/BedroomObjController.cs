@@ -31,7 +31,7 @@ public class BedroomObjController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("0"))
+        /*if (Input.GetKeyDown("0"))
         {
             Database.isOldManColored = true;
             
@@ -54,7 +54,7 @@ public class BedroomObjController : MonoBehaviour
 
                 Sprite.GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, alpha);
             }   
-        }
+        }*/
 
         float alphaa = alpha;
 
