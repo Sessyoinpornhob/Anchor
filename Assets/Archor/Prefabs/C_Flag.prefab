@@ -225,10 +225,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2811e42996912384d88f0569489c57e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifeTime: 30
+  LifeTime: 60
   lifeTime: 0
   text: {fileID: 4226234739094724196}
   CanTime: 0
+  numCards: 0
   UpMove: 10
   DownMove: 0
   CanDownMove: 1

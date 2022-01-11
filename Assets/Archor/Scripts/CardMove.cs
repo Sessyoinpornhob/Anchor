@@ -21,6 +21,7 @@ public class CardMove : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public Text text;
     public bool CanTime = false;
+    public float numCards;
 
     [SerializeField] private float UpMove;
     [SerializeField] private float DownMove;
@@ -39,12 +40,12 @@ public class CardMove : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         {
             lifeTime = lifeTime - 0.02f;//FixedUpdate()方法的调用频率是？
             text.text = lifeTime.ToString("f1");//在文本的显示中保留一位小数
-            if (lifeTime <= 0.2f)
+            if (lifeTime <= 0.01f)
             {
-                Destroy(gameObject, 0.2f);//这个时间配置就刚好（0.02f,0.2f,0.2f）
+                Database.cardDeleted = true;
+                Destroy(gameObject, 0.01f);//这个时间配置就刚好（0.02f,0.2f,0.2f）
             }
         }
-
     }
 
 
@@ -79,6 +80,7 @@ public class CardMove : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         {
             CanDownMove = true;
         }
+        //获取卡牌名字，送入DialogueController.cs进行判断
         Database.currentCardName = gameObject.name;//调用static变量
         GameObject.Find("GameController").GetComponent<DialogueController>().CardCheck(CanDownMove);//调用别的public函数
         GameObject.Find("GameController").GetComponent<DialogueController>().CardsCheck();

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,8 +27,6 @@ public class CardController : MonoBehaviour
     private GameObject[] _cardList;
 
     private RectTransform rect;
-
-    private float _numCards;
     private float _width;
 
 
@@ -35,15 +34,40 @@ public class CardController : MonoBehaviour
     {
         RectTransform rect = cardPanel.gameObject.GetComponent<RectTransform>();
         _width = rect.rect.width;
-        _numCards = 0f;
     }
 
-    public void SortCards(float NumCards)
+    private void Update()
+    {
+        if (Database.cardDeleted)
+        {
+            _cardList = GameObject.FindGameObjectsWithTag("Card");
+            ReSortCards(_cardList.Length);
+            Invoke("SetFalse",0.02f);
+        }
+    }
+
+    public void SetFalse()
+    {
+        Database.cardDeleted = false;
+    }
+    
+    public void SortCards(float numCards)
     {
         _cardList = GameObject.FindGameObjectsWithTag("Card");
         for (int i = 0; i < _cardList.Length; i++)
         {
-            _cardList[i].gameObject.GetComponent<RectTransform>().localPosition = new Vector3(((i+1)/ (NumCards+1)) * _width - 60, 0);//设定位置
+            _cardList[i].gameObject.GetComponent<RectTransform>().localPosition = new Vector3(((i+1)/ (numCards+1)) * _width - 60, 0);//设定位置
+            //Debug.Log(i+1 + " 号牌的位置是 " + CardList[i].gameObject.GetComponent<RectTransform>().localPosition.x);
+            //严格来讲，这个地方可以用DOTween来解决，但先做完再加。
+        }
+    }
+    
+    public void ReSortCards(float numCards)
+    {
+        _cardList = GameObject.FindGameObjectsWithTag("Card");
+        for (int i = 0; i < _cardList.Length; i++)
+        {
+            _cardList[i].gameObject.GetComponent<RectTransform>().localPosition = new Vector3(((i+1)/ (numCards+1)) * _width - 60, 0);//设定位置
             //Debug.Log(i+1 + " 号牌的位置是 " + CardList[i].gameObject.GetComponent<RectTransform>().localPosition.x);
             //严格来讲，这个地方可以用DOTween来解决，但先做完再加。
         }
@@ -54,12 +78,12 @@ public class CardController : MonoBehaviour
         //本来想使用协程制作一个计时器，延时DelayTime以后执行下面函数
         //但为什么是在剧情过完以后才开始计时的啊
         //0f表示不启用，0.1f表示剧情过完以后开始计时0.1s
-        _numCards++;
+        Database.numCards++;
         GameObject prefabInstance = Instantiate(prefabName);
         prefabInstance.transform.parent = GameObject.Find("UI/CardPanel").gameObject.transform;
         prefabInstance.gameObject.GetComponent<RectTransform>().localScale = new Vector3(2, 2, 2);//设定卡牌大小
         prefabInstance.gameObject.GetComponent<RectTransform>().localPosition = new Vector3(0, 0, 0);
-        SortCards(_numCards);
+        SortCards(Database.numCards);
     }
     
     //以下为使DialogueSystem调用方便而设置的函数
@@ -96,7 +120,7 @@ public class CardController : MonoBehaviour
     }
 
     public void GetXuMei() {
-        GetCard(prefabElectricity);
+        GetCard(prefabXuMei);
     }
 
     public void GetPills() {
