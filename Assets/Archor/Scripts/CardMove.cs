@@ -16,8 +16,8 @@ using DG.Tweening;
 
 public class CardMove : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public float LifeTime;
-    [SerializeField] private float lifeTime;
+    public float lifeTime;
+    private float _lifeTime;
 
     public Text text;
     public bool CanTime = false;
@@ -30,7 +30,7 @@ public class CardMove : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void Start()
     {
-        lifeTime = LifeTime;
+        _lifeTime = lifeTime;
     }
 
     public void FixedUpdate()
@@ -38,9 +38,9 @@ public class CardMove : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         //使用Alpha通道增加【获得卡牌】的效果
         if (CanTime)
         {
-            lifeTime = lifeTime - 0.02f;//FixedUpdate()方法的调用频率是？
-            text.text = lifeTime.ToString("f1");//在文本的显示中保留一位小数
-            if (lifeTime <= 0.01f)
+            _lifeTime = _lifeTime - 0.02f;//FixedUpdate()方法的调用频率是？
+            text.text = _lifeTime.ToString("f1");//在文本的显示中保留一位小数
+            if (_lifeTime <= 0.01f)
             {
                 Database.cardDeleted = true;
                 Destroy(gameObject, 0.01f);//这个时间配置就刚好（0.02f,0.2f,0.2f）
@@ -66,7 +66,6 @@ public class CardMove : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             transform.localScale = new Vector3(2f, 2f, 2f);
             //cv.sortingOrder += 100;
         }
-
     }
 
     public void Onclick()
@@ -85,5 +84,4 @@ public class CardMove : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         GameObject.Find("GameController").GetComponent<DialogueController>().CardCheck(CanDownMove);//调用别的public函数
         GameObject.Find("GameController").GetComponent<DialogueController>().CardsCheck();
     }
-
 }
