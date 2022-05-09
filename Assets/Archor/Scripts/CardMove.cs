@@ -11,6 +11,8 @@ using DG.Tweening;
  * 功能包括：鼠标移入、鼠标移出、点击事件（加了一个Button组件）、非锚点卡牌的计时自毁
  * 
  * Dialogue System相关的文本描述和识别卡牌携带信息见Dialogue Controller.cs
+ *
+ * 已重构完成
  */
 
 
@@ -51,26 +53,22 @@ public class CardMove : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerEnter(PointerEventData eventData)    //鼠标移入
     {
-        //Debug.Log("the card is under mouse");
         transform.DOLocalMoveY(UpMove, 0.1f, true);
-        transform.localScale = new Vector3(3f, 3f, 3f);//变大变小这种问题建议public出来，好改
-        transform.SetAsLastSibling();//改变渲染层级
+        transform.localScale = new Vector3(3f, 3f, 3f);
+        transform.SetAsLastSibling();
     }
 
     public void OnPointerExit(PointerEventData eventData)    //鼠标移出
     {
-        //Debug.Log("exit");
         if (CanDownMove)
         {
             transform.DOLocalMoveY(DownMove, 0.1f, true);
             transform.localScale = new Vector3(2f, 2f, 2f);
-            //cv.sortingOrder += 100;
         }
     }
 
     public void Onclick()
     {
-        //Debug.Log("click");
         if (CanDownMove)
         {
             CanDownMove = false;
@@ -80,8 +78,8 @@ public class CardMove : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             CanDownMove = true;
         }
         //获取卡牌名字，送入DialogueController.cs进行判断
-        Database.currentCardName = gameObject.name;//调用static变量
-        GameObject.Find("GameController").GetComponent<DialogueController>().CardCheck(CanDownMove);//调用别的public函数
+        Database.currentCardName = gameObject.name;
+        GameObject.Find("GameController").GetComponent<DialogueController>().CardCheck(CanDownMove);
         GameObject.Find("GameController").GetComponent<DialogueController>().CardsCheck();
     }
 }

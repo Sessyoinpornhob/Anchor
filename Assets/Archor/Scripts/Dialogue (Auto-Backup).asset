@@ -21,7 +21,7 @@ MonoBehaviour:
     bold: 1
     italic: 1
     underline: 0
-  - color: {r: 0.8901961, g: 0.35686275, b: 0.7311349, a: 1}
+  - color: {r: 0.8773585, g: 0.32611248, b: 0.4724507, a: 0.9098039}
     bold: 1
     italic: 1
     underline: 0
@@ -190,7 +190,7 @@ MonoBehaviour:
       - originConversationID: 1
         originDialogueID: 0
         destinationConversationID: 1
-        destinationDialogueID: 11
+        destinationDialogueID: 17
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1072,7 +1072,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: EventGuid
-        value: 3f3311d1-ab0a-4705-a3b8-9a70fd7c4302
+        value: 
         type: 0
         typeString: 
       conversationID: 1

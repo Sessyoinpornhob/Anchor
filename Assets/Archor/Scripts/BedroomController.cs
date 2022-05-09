@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//已废弃
 public class BedroomController : MonoBehaviour
 {
     private GameObject[] _00List;
@@ -13,18 +13,18 @@ public class BedroomController : MonoBehaviour
         
         for (int i = 0; i < _00List.Length; i++)
         {
-            _00List[i].GetComponent<SpriteRenderer>().enabled = false;
+            _00List[i].GetComponent<SpriteRenderer>().enabled = true;
         }
         for (int i = 0; i < _00List.Length; i++)
         {
-            _01List[i].GetComponent<SpriteRenderer>().enabled = false;
+            _01List[i].GetComponent<SpriteRenderer>().enabled = true;
         }
     }
 
     public void BookShelf00()
     {
         _00List[0].GetComponent<SpriteRenderer>().enabled = true;
-        //列表顺序就是Hierarchy中的顺序，酷啊
+        //列表顺序就是Hierarchy中的顺序
         //或者写一个字典简化代码？
     }
     public void Happiness00()

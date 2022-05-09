@@ -90,7 +90,14 @@ public class CardController : MonoBehaviour
         SortCards(Database.numCards);
     }
     
-    //以下为使DialogueSystem调用方便而设置的函数
+    //以下为 DialogueSystem调用方便而设置的函数
+    //正在重构中...但是没时间了你妈的你妈的你妈的
+    //现在是2.8号23：55明天还要去字节上班，项目优化不完简历还没写，大哥下次你有这种事要交作品集早点说谢谢您。
+    /*public void GetCardByName(string prefabName)
+    {
+        GetCard(prefabName);
+    }*/
+    
     public void GetTears() {
         GetCard(prefabTears);
     }

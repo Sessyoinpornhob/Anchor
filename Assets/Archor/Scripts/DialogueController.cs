@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,16 +10,11 @@ public class DialogueController : MonoBehaviour
     public GameObject actor;
     public GameObject conversant;
 
-    void Start()
-    {
-
-    }
-
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown("q"))
         {
-            DialogueManager.StartConversation("StoryToKnowledge", actor.transform, conversant.transform);
+            DialogueManager.StartConversation("Story_Death", actor.transform, conversant.transform);
         }
     }
 
@@ -26,6 +22,7 @@ public class DialogueController : MonoBehaviour
     public void CardCheck(bool canDownMove)
     {
         //用于单张卡牌的文本触发和变量录入
+        //或者搞一个字典......
         switch (Database.currentCardName)
         {
             case "C_Brown(Clone)":

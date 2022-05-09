@@ -21,7 +21,7 @@ MonoBehaviour:
     bold: 1
     italic: 1
     underline: 0
-  - color: {r: 0.8901961, g: 0.35686275, b: 0.7311349, a: 1}
+  - color: {r: 0.8773585, g: 0.32611248, b: 0.4724507, a: 0.9098039}
     bold: 1
     italic: 1
     underline: 0
@@ -190,7 +190,7 @@ MonoBehaviour:
       - originConversationID: 1
         originDialogueID: 0
         destinationConversationID: 1
-        destinationDialogueID: 17
+        destinationDialogueID: 11
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -741,6 +741,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: bb0733ff-558e-4583-b80d-a6c9fe22296d
+        type: 0
+        typeString: 
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -789,7 +793,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\u786E\u5B9E\u6709\u4E00\u4E2A\u5973\u4EBA\u5728\u7167\u987E\u6211\uFF0C\u4F46\u662F\u5979\u597D\u50CF\u4E5F\u4E0D\u592A\u613F\u610F\u548C\u6211\u8BF4\u8BDD......"
+        value: "\u786E\u5B9E\u6709\u4EBA\u5728\u7167\u987E\u6211\uFF0C\u4F46\u662F\u5979\u4E0D\u592A\u613F\u610F\u548C\u6211\u8BF4\u8BDD......"
         type: 0
         typeString: 
       - title: Sequence
@@ -1016,6 +1020,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 
+        type: 0
+        typeString: 
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -1072,7 +1080,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: EventGuid
-        value: 3f3311d1-ab0a-4705-a3b8-9a70fd7c4302
+        value: 
         type: 0
         typeString: 
       conversationID: 1
@@ -1131,7 +1139,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: EventGuid
-        value: ed5d25b9-d3c7-4026-8d52-11813e36d5eb
+        value: cc704bc5-a4e7-44cc-a306-a8e60b25ad56
         type: 0
         typeString: 
       conversationID: 1
@@ -2857,7 +2865,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: EventGuid
-        value: 909de366-2844-4b2f-ad56-c0e96328af94
+        value: d73975c1-956c-48b0-a8a7-da32b550e9ea
         type: 0
         typeString: 
       conversationID: 6
@@ -2915,6 +2923,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 966bfc9d-2368-4ac1-a1a7-6bff44bef5ac
+        type: 0
+        typeString: 
       conversationID: 6
       isRoot: 0
       isGroup: 0
@@ -3022,7 +3034,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u65E0\u8BBA\u662F\u8D2B\u7A77\u4F46\u65E0\u754F\u7684\u7AE5\u5E74\uFF0C\u610F\u6C14\u98CE\u53D1\u7684\u9752\u5E74\u65F6\u671F\uFF0C\u76F8\u6FE1\u4EE5\u6CAB\u7684\u8270\u96BE\u5C81\u6708"
+        value: "\u65E0\u754F\u7684\u7AE5\u5E74\uFF0C\u610F\u6C14\u98CE\u53D1\u7684\u9752\u5E74\u65F6\u671F\uFF0C\u76F8\u6FE1\u4EE5\u6CAB\u7684\u8270\u96BE\u5C81\u6708"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -3031,6 +3043,10 @@ MonoBehaviour:
         typeString: CustomFieldType_Text
       - title: Audio Files
         value: '[]'
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: eb13711f-e204-41be-85f8-75b84b6a3021
         type: 0
         typeString: 
       conversationID: 6
@@ -3147,6 +3163,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 94287f45-051c-4c89-8ae4-d943d4636b75
+        type: 0
+        typeString: 
       conversationID: 6
       isRoot: 0
       isGroup: 0
@@ -3158,9 +3178,9 @@ MonoBehaviour:
       - originConversationID: 6
         originDialogueID: 18
         destinationConversationID: 6
-        destinationDialogueID: 19
+        destinationDialogueID: 22
         isConnector: 0
-        priority: 1
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -3202,6 +3222,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 0108d7ce-1c63-481a-b9c2-9bfe90baf82b
+        type: 0
+        typeString: 
       conversationID: 6
       isRoot: 0
       isGroup: 0
@@ -3215,7 +3239,180 @@ MonoBehaviour:
         destinationConversationID: 6
         destinationDialogueID: 20
         isConnector: 0
-        priority: 1
+        priority: 0
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 396
+        y: 168
+        width: 160
+        height: 30
+    - id: 20
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 6
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 6
+        originDialogueID: 20
+        destinationConversationID: 6
+        destinationDialogueID: 23
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 216
+        y: 168
+        width: 160
+        height: 30
+    - id: 21
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: "\u2026\u2026\u90FD\u5524\u9192\u3002"
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 9894e921-8b0e-4a50-bfb5-dabf29f5c161
+        type: 0
+        typeString: 
+      conversationID: 6
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 6
+        originDialogueID: 21
+        destinationConversationID: 6
+        destinationDialogueID: 17
+        isConnector: 0
+        priority: 0
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 936
+        y: 120
+        width: 160
+        height: 30
+    - id: 22
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 6
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 6
+        originDialogueID: 22
+        destinationConversationID: 6
+        destinationDialogueID: 19
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -3227,7 +3424,62 @@ MonoBehaviour:
         y: 168
         width: 160
         height: 30
-    - id: 20
+    - id: 23
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u611F\u8C22\u4F53\u9A8C\uFF01"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 6
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 6
+        originDialogueID: 23
+        destinationConversationID: 6
+        destinationDialogueID: 24
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 36
+        y: 168
+        width: 160
+        height: 30
+    - id: 24
       fields:
       - title: Title
         value: 
@@ -3272,67 +3524,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 396
-        y: 168
-        width: 160
-        height: 30
-    - id: 21
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: "\u2026\u2026\u90FD\u5524\u9192\u3002"
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      - title: Audio Files
-        value: '[]'
-        type: 0
-        typeString: 
-      conversationID: 6
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 6
-        originDialogueID: 21
-        destinationConversationID: 6
-        destinationDialogueID: 17
-        isConnector: 0
-        priority: 0
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 936
-        y: 120
+        x: 36
+        y: 218
         width: 160
         height: 30
     entryGroups: []
@@ -5965,6 +6158,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 99dc9638-274b-403e-9a65-e7a4238c77ef
+        type: 0
+        typeString: 
       conversationID: 18
       isRoot: 0
       isGroup: 0
@@ -6998,6 +7195,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 76b6fe86-8597-4d0f-9e0f-cdbd45d11208
+        type: 0
+        typeString: 
       conversationID: 20
       isRoot: 0
       isGroup: 0
